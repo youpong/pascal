@@ -8,4 +8,10 @@ begin
    ptr^ := i + 16;
    
    WriteLn(i); (* 41 *)
+
+   if (ptr <> nil) then
+         WriteLn('not nil');
+   ptr := nil;
+   if (ptr = nil) then
+         WriteLn('nil');
 end.
