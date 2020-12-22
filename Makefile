@@ -1,10 +1,17 @@
 #PC = fpc
 
-.PHONY: clean
+TARGET = main
+SRCS = main.pas
+
+.PHONY: clean run
 
 clean:
-	- rm -f *.o *~ hello main
+	- rm -f *.o *~ hello $(TARGET)
+run: $(TARGET)
+	./$(TARGET)
+
 hello: hello.pas
 	$(PC) $^
-main: main.pas
+
+$(TARGET): $(SRCS)
 	$(PC) $^
